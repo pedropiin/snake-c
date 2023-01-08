@@ -4,8 +4,8 @@
 #include <termios.h>
 #include <sys/select.h>
 
-#define COLS 30
-#define ROWS 15
+#define COLS 60
+#define ROWS 30
 
 void printa_tabuleiro() {
     printf("┌");
@@ -48,7 +48,6 @@ void cria_nova_maca(int *xmaca, int *ymaca, int pos_cabeca, int pos_cauda, int x
 void verifica_comeu_maca(int *xmaca, int ymaca, int pos_cabeca, int *pos_cauda, int xcobra[], int ycobra[]) {
     if (xcobra[pos_cabeca] == *xmaca && ycobra[pos_cabeca] == ymaca) {
         *xmaca = -1;
-        printf("\a");
     } else {
         *pos_cauda = (*pos_cauda + 1) % 1000;
     }
