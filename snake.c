@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <conio.h>
 #include <termios.h>
 #include <sys/select.h>
 
@@ -163,7 +164,8 @@ int main() {
             getchar();
         }
     }
-
+    
+    printf("\e[?25h");
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     system("clear");
     return 0;
